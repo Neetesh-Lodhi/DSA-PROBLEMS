@@ -40,23 +40,6 @@ public class countOccurences {
 //     }
 // }
 
-// public class Main {         
 
-//     public static void main(String[] args) {
-//         String str = "Neetesh";
-//         Map<Character, Integer> charCountMap = new HashMap<>();
 
-//         // Convert string to lowercase to count case-insensitively (optional)
-//         str = str.toLowerCase();
 
-//         // Count occurrences of each character
-//         for (char c : str.toCharArray()) {
-//             charCountMap.put(c, charCountMap.getOrDefault(c, 0) + 1);
-//         }
-
-//         // Print occurrences of each character
-//         for (Map.Entry<Character, Integer> entry : charCountMap.entrySet()) {
-//             System.out.println(entry.getKey() + " -> " + entry.getValue());
-//         }
-//     }
-// }

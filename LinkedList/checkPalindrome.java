@@ -1,4 +1,5 @@
 import java.util.*;
+import javax.xml.transform.Templates;
 
 public class checkPalindrome {
 
@@ -44,14 +45,14 @@ public class checkPalindrome {
                     // Step 2: Reverse the second half of the list starting from the middle
                     Node prev = null; // To keep track of the previous node during reversal
                     Node curr = midNode; // Start reversing from the middle node
-                    Node next;
+                    Node temp;
 
                     // Reverse the second half of the linked list
                     while (curr != null) {
-                              next = curr.next; // Store reference to the next node
+                              temp = curr.next; // Store reference to the next node
                               curr.next = prev; // Reverse the current node's pointer
                               prev = curr; // Move prev to current node
-                              curr = next; // Move to the next node in the original list
+                              curr = temp; // Move to the next node in the original list
                     }
 
                     // Step 3: Compare the first half with the reversed second half

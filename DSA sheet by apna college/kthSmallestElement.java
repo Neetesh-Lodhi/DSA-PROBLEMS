@@ -1,18 +1,19 @@
-import java.util.*;
 
+//kth smallest element
+import java.util.*;
 public class kthSmallestElement {
 
           public static void main(String[] args) {
-                    // Array of integers
-                    int[] nums = { 6, 2, 3, 4, 1, 9 };
-
-                    // The position of the smallest element to find (3rd smallest in this case)
+                    int arr[] = { 2, 4, 6, 8 ,3};
                     int k = 2;
 
-                    // Sorting the array in ascending order
-                    Arrays.sort(nums);
-
-                    // Access the (k-1)th element, as arrays are zero-indexed
-                    System.out.println(nums[k - 1]);
+                    PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder());
+                    for (int num : arr) {
+                              maxHeap.add(num);
+                              if (maxHeap.size() > k) {
+                                        maxHeap.poll();
+                              }
+                    }
+                    System.out.println(k + "th smallest element is : " + maxHeap.poll());
           }
 }

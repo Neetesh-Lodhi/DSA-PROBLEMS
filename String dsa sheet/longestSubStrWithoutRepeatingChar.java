@@ -1,3 +1,6 @@
+
+
+
 import java.util.*;
 
 public class longestSubStrWithoutRepeatingChar {
@@ -17,7 +20,7 @@ public class longestSubStrWithoutRepeatingChar {
                                 end++;
                                 max_length = Math.max(max_length, list.size());
                       } else {
-                                list.remove(Character.valueOf(s.charAt(start)));  
+                                list.remove(Character.valueOf(s.charAt(start)));   //conversion to int
                                 start++;
                     }
             }

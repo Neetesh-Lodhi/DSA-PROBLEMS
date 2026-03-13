@@ -1,4 +1,31 @@
 
+//Brute force - Time Complexity: O(min(N1, N2))
+/*
+public static void main(String[] args) {
+        int n1 = 9;
+        int n2 = 12;
+        System.out.println(gcd(n1,n2));
+    }
+    
+    public static int gcd(int n1,int n2){
+        
+        int gcd = 1;
+        int min = Math.min(n1,n2);
+        for(int i=1;i<=min;i++){
+            if(n1 % i == 0 && n2 % i == 0){
+                gcd = i;
+            }
+        }
+        
+        return gcd;
+    }
+*/
+
+
+
+
+
+//t.c - O(log(min(a, b))) time
 // public class GCD {
 
 //     // Euclidean Algorithm -The Euclidean algorithm is a method to find the greatest common divisor (GCD) of two integers. It works by repeatedly dividing the larger number by the smaller one and replacing the larger number with the remainder until the remainder becomes zero. The last non-zero remainder is the GCD.

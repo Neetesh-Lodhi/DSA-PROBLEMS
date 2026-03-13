@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class revStringUsingStack {
+public class revStringUsingStack {  //time - O(n) space- O(n)
           public static String revString(String str) {
                     Stack<Character> s = new Stack<>();
                     int idx = 0;

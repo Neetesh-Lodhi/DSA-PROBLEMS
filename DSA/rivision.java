@@ -1,25 +1,24 @@
 public class rivision {
 
-       public static void printArr(int[] arr) {
-              int n = arr.length;
-              for (int i = 0; i < n; i++) {
-                     System.out.print(arr[i] + " ");
-              }
-              System.out.println();
-       }
+  
 
-       public static int missing(int[] arr) {
-              int n = arr.length + 1;
-              int sum = n * (n + 1) / 2;
-              for (int num : arr) {
-                     sum = sum - num;
-              }
-              return sum;
+        public static int maxProdSubArray(int[] nums) {
+            int max = Integer.MIN_VALUE;
+            for (int i = 0; i < nums.length; i++) {
 
-       }
-public static void main(String[] args) {
-       int[] arr = { 1, 2, 3, 5, 6 };
-       System.out.println(missing(arr));
-}
+                   int prod = 1;
+                   for (int j = i; j < nums.length; j++) {
+                          prod = prod * nums[j];
+                          max = Math.max(prod, max);
+                   }
+            }
+            return max;
+        }
+
+        public static void main(String[] args) {   //Explanation: [4,-1,2,1] has the largest sum = 6
+            int[] arr = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
+            System.out.println(maxProdSubArray(arr));
+        }
+    }
        
-}
+

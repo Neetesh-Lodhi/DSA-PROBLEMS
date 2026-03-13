@@ -1,23 +1,28 @@
-public class secondMin {
-          
-          public static int findSecMax(int[] arr) {
-                    int max = Integer.MIN_VALUE;//-2147483648
-                    int secondMax = Integer.MIN_VALUE;
-                    for (int i = 0; i < arr.length; i++) {
-                              if (arr[i] > max) {
-                                        secondMax = max;
-                                        max = arr[i];
-                              } else if (arr[i] > secondMax && arr[i] != max) {
-                                        secondMax = arr[i];
-                              }
-                    }
+public class SecondMin {
+        
 
-                    return secondMax;
+        public static int secondMinimum(int[] arr, int n) {
+            int min = Integer.MAX_VALUE;
+            int secMin = Integer.MAX_VALUE;
 
-          }
+            for (int i = 0; i < n; i++) {
+                if (arr[i] < min) {
+                    secMin = min;
+                    min = arr[i];
 
-          public static void main(String[] args) {
-                    int[] arr = { 20, 30, 40, 50, 60,45455 };
-                    System.out.println(findSecMax(arr));
-    }    
-}
+                }
+                if (arr[i] < secMin && arr[i] != min) {
+                    secMin = arr[i];
+                }
+            }
+            return secMin;
+        }
+
+        public static void main(String[] args) {
+
+            int arr[] = {6, 7, 1, 2};
+
+            System.out.println(secondMinimum(arr, arr.length));
+        }
+    }
+

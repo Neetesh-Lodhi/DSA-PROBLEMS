@@ -27,6 +27,14 @@ public class MergeSort {
         for (int i = 0, j = si; i < merged.length; i++, j++) {
             arr[j] = merged[i];
         }
+
+        //or
+        // Copy all elements from merged[] back to arr[] starting from si
+      //  int j = si;  // start index in the original array
+        // for (int i = 0; i < merged.length; i++) {
+        //     arr[j] = merged[i];
+        //     j++;
+        // }
     }
 
     public static void divide(int arr[], int si, int ei) {

@@ -1,40 +1,63 @@
+/*
 
 
+ public static void insertionSort(int[] arr){
+        int n = arr.length;
+          
+          for(int i=1;i<n;i++){
+              int key = arr[i];
+              int j = i-1;
+              
+              while( j >= 0 && arr[j] > key){
+                   arr[j+1] = arr[j];
+                   j--;
+              } 
+              
+              arr[j+1] = key;
+          }
+    }
+    public static void main(String[] args) {
+        int[] arr = {7,4,1,5,3};
+        insertionSort(arr);
+        
+        for(int x : arr){
+            System.out.print(x + " ");
+        }
+        System.out.println();
+    }
+
+*/
 
 
-public class insertionsort {// time complexity O(n2) teeno ki time complexitiy same hai
+public class Insertionsort {
 
-    public static void InsertionSort(int arr[], int n) {
+    public static void insertionSort(int[] arr) {
+        for (int i = 1; i < arr.length; i++) {
+            int temp = arr[i];
+            int j = i;
 
-        for (int i = 0; i < n - 1; i++) {
-            for (int j = i + 1; j > 0; j--) {
-                if (arr[j] < arr[j - 1]) {
-                    //swap
-                    int temp = arr[j];
-                    arr[j] = arr[j - 1];
-                    arr[j - 1] = temp;
-                } 
-                
+            while (j > 0 && arr[j - 1] > temp) {
+                arr[j] = arr[j-1];
+                j--;
             }
+            arr[j] = temp;
         }
     }
 
-        public static void printArr(int arr[]){
-            for (int i = 0; i < arr.length; i++) {
-                System.out.print(arr[i] + " ");
-            }
-        System.out.println();
+           
+    public static void printArr(int arr[]) {
+        for (int num : arr) {
+            System.out.print(num + " ");
         }
-        
-    
-   public static void main(String[] args) {
-       int arr[] = { 5,3,4,1,2 };
-       int n = arr.length;
-       printArr(arr);
-       InsertionSort(arr, n);
-       printArr(arr);
-   }
+        System.out.println();
+    }
+    public static void main(String[] args) {
+        int arr[] = { 2, 4, 3, 0, 1, 5 };
+        printArr(arr);
+        insertionSort(arr);
+        printArr(arr);
 
+    }
 }
 
 

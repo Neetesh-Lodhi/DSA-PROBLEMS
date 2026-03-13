@@ -1,24 +1,16 @@
-
-import java.util.Arrays;
+import java.util.HashSet;
 
 public class rivision {
 
-    public static int chocklate(int[] arr, int n, int m) {
-        Arrays.sort(arr);
-          int min = Integer.MAX_VALUE;
-          for (int i = 0; i + m - 1 < n; i++) {
-              int diff = arr[i + m - 1] - arr[i];
-              if (diff < min) {
-                  min = diff;
-              }
-          }
-          return min;
-    }
+    
     public static void main(String[] args) {
-            int[] arr = {3, 4, 1, 9, 56, 7, 9, 12};
-                   int n = arr.length;
-                   int m = 5;
-                  System.out.println(chocklate(arr,n,m));
+        int n = 12;
+          
+        for(int i=0;i<=n;i++){
+            if (n % i == 0) {
+                System.out.println(i);
+            }
+        }
 
     }
 
