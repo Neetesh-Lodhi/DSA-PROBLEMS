@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 class Fib {
            int[] dp;
     public int fib(int n) {
@@ -6,14 +8,19 @@ class Fib {
         return solve(n);
     }
 
-    public int solve(int i){
-        if(i <= 1) return i;
+    public int solve(int i) {
+        if (i <= 1)
+            return i;
 
-        if(dp[i] != -1){
+        if (dp[i] != -1) {
             return dp[i];
         }
 
-        dp[i] = solve(i-1) + solve(i-2);
+        dp[i] = solve(i - 1) + solve(i - 2);
         return dp[i];
+    }
+
+    public static void main(String[] args) {
+        
     }
 }
