@@ -1,5 +1,5 @@
 class Valid {
-            public List<Integer> findValidElements(int[] nums) {
+            public List<Integer> findValidElement(int[] nums) {
         int n = nums.length;
         List<Integer> ans = new ArrayList<>();
 
