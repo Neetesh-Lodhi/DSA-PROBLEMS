@@ -1,3 +1,8 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+
 public class LastHope1 {
 
 }
@@ -274,4 +279,194 @@ public List<List<Integer>> fourSum(int[] nums, int target) {
                     }
           }
           return ans;
+}
+
+
+
+
+
+
+
+// day 03 - 
+
+// 1. Delete nth node from the end in a linked list -
+
+public ListNode removeNthFromEnd(ListNode head, int n) {
+          ListNode dummy = new ListNode(1); //T.C - O(n)
+          dummy.next = head; //if we did't know head this is the technique to know head
+
+          ListNode back = dummy;
+          ListNode front = dummy;
+
+          for (int i = 0; i < n; i++) {
+                    front = front.next;
+          }
+
+          while (front.next != null) {
+                    back = back.next;
+                    front = front.next;
+          }
+          back.next = back.next.next;
+          return dummy.next;
+
+}
+    
+
+
+
+
+
+
+// Add two number in the linked list
+
+public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+          ListNode dummy = new ListNode(); // T.C-O(max(m,n)) , S.C-0(max(m,n))
+          ListNode ans = dummy;
+          int carry = 0;
+
+          while (l1 != null || l2 != null || carry != 0) {
+                    int x = (l1 != null) ? l1.val : 0;
+                    int y = (l2 != null) ? l2.val : 0;
+
+                    int sum = carry + x + y;
+                    carry = sum / 10; // 7/10 = 0
+
+                    ans.next = new ListNode(sum % 10); // 7%10 = 7,12%10 = 2
+                    ans = ans.next;
+
+                    if (l1 != null) {
+                              l1 = l1.next;
+                    }
+                    if (l2 != null) {
+                              l2 = l2.next;
+                    }
+
+          }
+          return dummy.next;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//ispalindrome
+
+public boolean isPalindrome(ListNode head) {
+          if (head == null || head.next == null)
+                    return true; // T.C-O(n)
+
+          ListNode midNode = findMid(head);
+
+          ListNode prev = null;
+          ListNode curr = midNode;
+
+          while (curr != null) {
+                    ListNode temp = curr.next;
+                    curr.next = prev;
+                    prev = curr;
+                    curr = temp;
+          }
+
+          ListNode left = head;
+          ListNode right = prev;
+
+          while (right != null) {
+                    if (left.val != right.val) {
+                              return false;
+                    }
+                    left = left.next;
+                    right = right.next;
+          }
+
+          return true;
+
+}
+
+public ListNode findMid(ListNode head) {
+
+          ListNode slow = head;
+          ListNode fast = head;
+
+          while (fast != null && fast.next != null) {
+                    slow = slow.next;
+                    fast = fast.next.next;
+          }
+
+          return slow;
+}
+
+
+
+
+
+
+
+//4 gcd of two numbers
+
+
+
+public static int gcd(int a, int b) {
+          // code here
+          while (a > 0 && b > 0) {
+
+                    if (a > b) {
+                              a = a % b;
+                    } else {
+                              b = b % a;
+                    }
+          }
+
+          return a == 0 ? b : a;
+}
+
+
+
+
+
+
+
+
+//5 lcm of two numbers 
+
+
+public int lcm(int a, int b) {
+          // code here
+          int x = a;
+          int y = b;
+          int ans = 1;
+          for (int i = 1; i <= Math.min(a, b); i++) {
+                    if (a % i == 0 && b % i == 0) {
+                              ans = i;
+                    }
+          }
+          return x * y / ans;
+}
+
+
+
+
+
+//6 armstrong number
+
+static boolean armstrongNumber(int n) {
+          // code here
+
+          int arm = 0;
+          int temp = n;
+          while (n > 0) {
+                    int ld = n % 10;
+                    arm = arm + ld * ld * ld;
+                    n = n / 10;
+          }
+
+          return temp == arm;
 }
