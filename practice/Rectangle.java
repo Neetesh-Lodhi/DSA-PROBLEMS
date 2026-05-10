@@ -1,5 +1,5 @@
 class Rectangle{
-            public boolean isRectangleCover(int[][] rectangles) {
+            public boolean isRectngleCover(int[][] rectangles) {
         long area = 0;
         int minX = Integer.MAX_VALUE, minY = Integer.MAX_VALUE;
         int maxX = Integer.MIN_VALUE, maxY = Integer.MIN_VALUE;
